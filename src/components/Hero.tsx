@@ -16,9 +16,9 @@ export default function Hero() {
           style={{
             fontSize: "clamp(2.5rem, 10vw, 7rem)",
           }}
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, ease: "easeOut" }}
+          transition={{ duration: 1.2, delay: 2.2, ease: "easeOut" }}
         >
           Tanya Lytko
         </motion.h1>
@@ -27,7 +27,7 @@ export default function Hero() {
           className="mt-4 font-body text-xs uppercase tracking-[0.3em] text-[var(--color-text-muted)]"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
+          transition={{ duration: 1, delay: 2.6, ease: "easeOut" }}
         >
           Art Abstrait Contemporain
         </motion.p>
@@ -36,19 +36,24 @@ export default function Hero() {
           className="mt-2 font-body text-sm italic text-[var(--color-text-muted)]"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 0.6, delay: 0.5, ease: "easeOut" }}
+          transition={{ duration: 1, delay: 2.9, ease: "easeOut" }}
         >
           Aix-les-Bains, France
         </motion.p>
       </div>
 
       {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2">
+      <motion.div
+        className="absolute bottom-8 left-1/2 -translate-x-1/2"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1, delay: 3.3, ease: "easeOut" }}
+      >
         <div className="scroll-indicator flex flex-col items-center gap-1">
           <div className="h-10 w-px bg-foreground/30" />
           <div className="h-2 w-2 rounded-full bg-foreground/40" />
         </div>
-      </div>
+      </motion.div>
 
     </section>
   );

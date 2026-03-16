@@ -9,7 +9,7 @@ export default function PageLoader() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsVisible(false);
-    }, 1500);
+    }, 2000);
 
     return () => clearTimeout(timer);
   }, []);
@@ -24,7 +24,7 @@ export default function PageLoader() {
           exit={{
             y: "-100vh",
             transition: {
-              duration: 0.6,
+              duration: 1,
               ease: [0.25, 0.1, 0.25, 1],
             },
           }}
