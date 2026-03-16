@@ -1,26 +1,68 @@
 @import "tailwindcss";
 
+/* ─── CSS Custom Properties ─────────────────────────────────────────────── */
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Base palette — warm, textured, artistic */
+  --background: #FAF8F5;
+  --foreground: #1A1A1A;
+
+  /* Accent colors — vibrant, expressive */
+  --accent-warm: #C45C3E;
+  --accent-amber: #D4A574;
+  --accent-terracotta: #B85C38;
+  --accent-deep: #2C2416;
+  --accent-muted: #8B7355;
+
+  /* Borders & surfaces */
+  --border-subtle: rgba(26, 26, 26, 0.08);
+  --border-medium: rgba(26, 26, 26, 0.15);
+  --surface-elevated: #FFFFFF;
+
+  /* Typography scale */
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.25rem;
+  --text-2xl: 1.5rem;
+  --text-3xl: 1.875rem;
+  --text-4xl: 2.25rem;
+  --text-5xl: 3rem;
+
+  /* Transitions — smooth, organic */
+  --transition-fast: 150ms ease;
+  --transition-base: 250ms ease;
+  --transition-slow: 400ms ease;
+
+  /* Radius — soft, organic curves */
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-border-subtle: var(--border-subtle);
+  --color-accent-warm: var(--accent-warm);
+  --color-accent-amber: var(--accent-amber);
+  --color-accent-terracotta: var(--accent-terracotta);
+  --color-accent-deep: var(--accent-deep);
+  --color-accent-muted: var(--accent-muted);
+  --font-heading: var(--font-heading, "Playfair Display", Georgia, serif);
+  --font-body: var(--font-body, "DM Sans", system-ui, sans-serif);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+/* ─── Base styles ───────────────────────────────────────────────────────── */
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-body);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
 }
