@@ -12,9 +12,9 @@ export default function Hero() {
     >
       <div className="flex flex-col items-center text-center">
         <motion.h1
-          className="font-heading font-medium tracking-tight text-foreground"
+          className="break-words font-heading font-medium tracking-tight text-foreground"
           style={{
-            fontSize: "clamp(3rem, 8vw, 7rem)",
+            fontSize: "clamp(2.5rem, 10vw, 7rem)",
           }}
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}

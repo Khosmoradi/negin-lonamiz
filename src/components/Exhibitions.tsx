@@ -53,7 +53,7 @@ export default function Exhibitions() {
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true, amount: 0.3 }}
-                className="relative flex flex-col gap-2 pl-10 md:flex-row md:items-baseline md:gap-8 md:pl-16 md:pb-8 last:pb-0"
+                className="relative flex flex-col gap-1 pl-10 md:flex-row md:items-baseline md:gap-8 md:pl-16 md:pb-8 last:pb-0"
               >
                 {/* Timeline dot - 6px circle, accent color */}
                 <div
@@ -61,7 +61,7 @@ export default function Exhibitions() {
                   style={{ backgroundColor: "var(--color-accent)" }}
                 />
 
-                {/* Year - left on desktop, above on mobile */}
+                {/* Year - left on desktop, stacked above on mobile */}
                 <div className="shrink-0 md:w-20">
                   <span
                     className="font-heading text-2xl font-bold md:text-3xl"

@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 
@@ -8,13 +9,15 @@ Ses œuvres se distinguent par des couleurs intenses, des lignes brisées et des
 Depuis 2024, Tanya vit et travaille à Aix-les-Bains, en France, où la lumière et les paysages alpins nourrissent sa pratique artistique.`;
 
 export default function About() {
+  const [imageLoaded, setImageLoaded] = useState(false);
+
   return (
     <section id="biographie" className="relative bg-background py-16 md:py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 lg:items-center">
-          {/* Left column: Artist photo */}
+        <div className="flex flex-col gap-12 lg:grid lg:grid-cols-2 lg:gap-16 lg:items-center">
+          {/* Left column: Artist photo — full width on mobile, top */}
           <motion.div
-            className="relative flex justify-center lg:justify-end"
+            className="relative order-1 flex justify-center lg:order-1 lg:justify-end"
             initial={{ opacity: 0, x: -40 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.3 }}
@@ -35,17 +38,18 @@ export default function About() {
                   alt="Tanya Lytko — Artiste peintre"
                   width={500}
                   height={600}
-                  className="h-auto w-full object-cover"
+                  className={`h-auto w-full object-cover img-load ${imageLoaded ? "loaded" : ""}`}
                   sizes="(max-width: 1024px) 100vw, 50vw"
                   priority={false}
+                  onLoad={() => setImageLoaded(true)}
                 />
               </div>
             </div>
           </motion.div>
 
-          {/* Right column: Biography text */}
+          {/* Right column: Biography text — below photo on mobile */}
           <motion.div
-            className="flex flex-col justify-center"
+            className="order-2 flex flex-col justify-center"
             initial={{ opacity: 0, x: 40 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.3 }}

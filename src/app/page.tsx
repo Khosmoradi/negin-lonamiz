@@ -6,10 +6,12 @@ import Exhibitions from "@/components/Exhibitions";
 import Instagram from "@/components/Instagram";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
+import PageLoader from "@/components/PageLoader";
 
 export default function Home() {
   return (
     <>
+      <PageLoader />
       <Navigation />
       <main>
         <Hero />

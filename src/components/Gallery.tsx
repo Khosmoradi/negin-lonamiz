@@ -1,7 +1,10 @@
 "use client";
 
+import { useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import Lightbox from "./Lightbox";
+import type { LightboxArtwork } from "./Lightbox";
 
 const artworks = [
   {
@@ -88,8 +91,15 @@ const containerVariants = {
 };
 
 export default function Gallery() {
+  const [lightboxArtwork, setLightboxArtwork] = useState<LightboxArtwork | null>(null);
+
   return (
     <section id="oeuvres" className="relative bg-background py-16 md:py-24">
+      <Lightbox
+        artwork={lightboxArtwork}
+        isOpen={!!lightboxArtwork}
+        onClose={() => setLightboxArtwork(null)}
+      />
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Section title */}
         <motion.div
@@ -117,7 +127,7 @@ export default function Gallery() {
               viewport={{ once: true, amount: 0.3 }}
               className="w-[65%]"
             >
-              <ArtworkCard artwork={artworks[0]} priority sizeHint="large" />
+              <ArtworkCard artwork={artworks[0]} priority sizeHint="large" onClick={() => setLightboxArtwork(artworks[0])} />
             </motion.article>
             <motion.article
               custom={1}
@@ -127,7 +137,7 @@ export default function Gallery() {
               viewport={{ once: true, amount: 0.3 }}
               className="w-[35%]"
             >
-              <ArtworkCard artwork={artworks[1]} priority sizeHint="small" />
+              <ArtworkCard artwork={artworks[1]} priority sizeHint="small" onClick={() => setLightboxArtwork(artworks[1])} />
             </motion.article>
           </div>
 
@@ -141,7 +151,7 @@ export default function Gallery() {
               viewport={{ once: true, amount: 0.3 }}
               className="w-[35%]"
             >
-              <ArtworkCard artwork={artworks[2]} sizeHint="small" />
+              <ArtworkCard artwork={artworks[2]} sizeHint="small" onClick={() => setLightboxArtwork(artworks[2])} />
             </motion.article>
             <motion.article
               custom={3}
@@ -151,7 +161,7 @@ export default function Gallery() {
               viewport={{ once: true, amount: 0.3 }}
               className="w-[65%]"
             >
-              <ArtworkCard artwork={artworks[3]} sizeHint="large" />
+              <ArtworkCard artwork={artworks[3]} sizeHint="large" onClick={() => setLightboxArtwork(artworks[3])} />
             </motion.article>
           </div>
 
@@ -165,7 +175,7 @@ export default function Gallery() {
               viewport={{ once: true, amount: 0.3 }}
               className="w-[35%]"
             >
-              <ArtworkCard artwork={artworks[4]} sizeHint="small" constrainedHeight />
+              <ArtworkCard artwork={artworks[4]} sizeHint="small" constrainedHeight onClick={() => setLightboxArtwork(artworks[4])} />
             </motion.article>
             <motion.article
               custom={5}
@@ -175,7 +185,7 @@ export default function Gallery() {
               viewport={{ once: true, amount: 0.3 }}
               className="w-[65%]"
             >
-              <ArtworkCard artwork={artworks[5]} sizeHint="large" constrainedHeight />
+              <ArtworkCard artwork={artworks[5]} sizeHint="large" constrainedHeight onClick={() => setLightboxArtwork(artworks[5])} />
             </motion.article>
           </div>
         </div>
@@ -191,13 +201,13 @@ export default function Gallery() {
               whileInView="visible"
               viewport={{ once: true, amount: 0.3 }}
             >
-              <ArtworkCard artwork={artwork} priority={index < 2} />
+              <ArtworkCard artwork={artwork} priority={index < 2} onClick={() => setLightboxArtwork(artwork)} />
             </motion.article>
           ))}
         </div>
 
         {/* Mobile: single column */}
-        <div className="flex flex-col gap-4 md:hidden">
+        <div className="flex flex-col gap-8 md:hidden">
           {artworks.map((artwork, index) => (
             <motion.article
               key={artwork.id}
@@ -207,7 +217,7 @@ export default function Gallery() {
               whileInView="visible"
               viewport={{ once: true, amount: 0.3 }}
             >
-              <ArtworkCard artwork={artwork} priority={index < 2} />
+              <ArtworkCard artwork={artwork} priority={index < 2} onClick={() => setLightboxArtwork(artwork)} />
             </motion.article>
           ))}
         </div>
@@ -221,11 +231,13 @@ function ArtworkCard({
   priority = false,
   sizeHint = "large",
   constrainedHeight = false,
+  onClick,
 }: {
   artwork: (typeof artworks)[0];
   priority?: boolean;
   sizeHint?: "large" | "small";
   constrainedHeight?: boolean;
+  onClick?: () => void;
 }) {
   const sizes =
     sizeHint === "large"
@@ -237,7 +249,11 @@ function ArtworkCard({
       className={`group overflow-hidden rounded-lg transition-shadow duration-300 hover:shadow-lg ${constrainedHeight ? "flex flex-col items-center" : ""}`}
     >
       <div
-        className={`relative flex min-h-0 shrink-0 items-center justify-center overflow-hidden bg-[var(--color-bg-warm)] p-4 ${constrainedHeight ? "max-h-[70vh] w-full max-w-full" : ""}`}
+        role={onClick ? "button" : undefined}
+        tabIndex={onClick ? 0 : undefined}
+        onKeyDown={onClick ? (e) => e.key === "Enter" && onClick() : undefined}
+        onClick={onClick}
+        className={`relative flex min-h-0 shrink-0 cursor-zoom-in items-center justify-center overflow-hidden bg-[var(--color-bg-warm)] p-4 ${constrainedHeight ? "max-h-[70vh] w-full max-w-full" : ""}`}
         style={{ aspectRatio: `${artwork.width}/${artwork.height}` }}
       >
         <div className="relative h-full w-full overflow-hidden rounded-sm">

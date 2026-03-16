@@ -91,7 +91,7 @@ export default function Navigation() {
 
       {/* Mobile menu */}
       <div
-        className={`md:hidden overflow-hidden transition-all duration-300 ease-out ${
+        className={`md:hidden overflow-hidden transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] ${
           isMobileMenuOpen ? "max-h-64 opacity-100" : "max-h-0 opacity-0"
         }`}
       >

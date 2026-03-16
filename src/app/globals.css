@@ -70,7 +70,13 @@ html {
 }
 
 ::selection {
-  background: rgba(193, 67, 46, 0.2);
+  background: var(--color-accent);
+  color: white;
+}
+
+::-moz-selection {
+  background: var(--color-accent);
+  color: white;
 }
 
 body {
@@ -102,4 +108,14 @@ h1, h2, h3, h4, h5, h6 {
 
 .scroll-indicator {
   animation: scroll-pulse 2s ease-in-out infinite;
+}
+
+/* Smooth image loading — blur to clear transition */
+.img-load {
+  filter: blur(10px);
+  transition: filter 0.5s ease-out;
+}
+
+.img-load.loaded {
+  filter: blur(0);
 }
