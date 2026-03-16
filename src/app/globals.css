@@ -42,6 +42,7 @@
   --radius-xl: 1rem;
 
   /* Additional palette */
+  --color-bg: var(--background);
   --color-accent: #C1432E;
   --color-accent-soft: #D4836F;
   --color-gold: #B8963E;
@@ -91,4 +92,14 @@ body::before {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);
+}
+
+/* Hero scroll indicator animation */
+@keyframes scroll-pulse {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(6px); }
+}
+
+.scroll-indicator {
+  animation: scroll-pulse 2s ease-in-out infinite;
 }
