@@ -1,10 +1,25 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
+
+const ARTWORKS = [
+  "/artworks/Back to Breath.jpg",
+  "/artworks/Between Seasons.jpg",
+  "/artworks/REFLECTIONS.jpg",
+  "/artworks/The Gate.jpg",
+  "/artworks/FEUILLES.jpg",
+  "/artworks/Whisper of Warmth.jpg",
+];
 
 export default function PageLoader() {
   const [isVisible, setIsVisible] = useState(true);
+  const [selectedImage, setSelectedImage] = useState<string>("");
+
+  useEffect(() => {
+    setSelectedImage(ARTWORKS[Math.floor(Math.random() * ARTWORKS.length)]);
+  }, []);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -29,12 +44,23 @@ export default function PageLoader() {
             },
           }}
         >
-          <span
-            className="font-heading text-5xl font-medium tracking-tight text-foreground sm:text-6xl md:text-7xl"
-            style={{ fontFamily: "var(--font-heading), 'Playfair Display', Georgia, serif" }}
-          >
-            TL
-          </span>
+          {selectedImage && (
+            <motion.div
+              className="relative"
+              style={{ width: "50vw", height: "50vh", maxWidth: "50vw", maxHeight: "50vh" }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.3 }}
+            >
+              <Image
+                src={selectedImage}
+                alt="Artwork"
+                fill
+                className="object-contain"
+                sizes="50vw"
+              />
+            </motion.div>
+          )}
         </motion.div>
       )}
     </AnimatePresence>

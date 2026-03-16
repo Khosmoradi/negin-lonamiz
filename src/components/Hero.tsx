@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 
 export default function Hero() {
@@ -23,36 +24,28 @@ export default function Hero() {
           Tanya Lytko
         </motion.h1>
 
-        <motion.p
-          className="mt-4 font-body text-xs uppercase tracking-[0.3em] text-[var(--color-text-muted)]"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 2.6, ease: "easeOut" }}
-        >
-          Art Abstrait Contemporain
-        </motion.p>
+        
 
-        <motion.p
-          className="mt-2 font-body text-sm italic text-[var(--color-text-muted)]"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 2.9, ease: "easeOut" }}
-        >
-          Aix-les-Bains, France
-        </motion.p>
+        
       </div>
 
-      {/* Scroll indicator */}
+      {/* Flower image */}
       <motion.div
-        className="absolute bottom-8 left-1/2 -translate-x-1/2"
+        className="absolute bottom-0 left-1/2 flex -translate-x-1/2 justify-center"
         initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1, delay: 3.3, ease: "easeOut" }}
+        animate={{ opacity: 0.7, y: [0, -10, 0] }}
+        transition={{
+          opacity: { duration: 1, delay: 3.3, ease: "easeOut" },
+          y: { repeat: Infinity, duration: 3, ease: "easeInOut" },
+        }}
       >
-        <div className="scroll-indicator flex flex-col items-center gap-1">
-          <div className="h-10 w-px bg-foreground/30" />
-          <div className="h-2 w-2 rounded-full bg-foreground/40" />
-        </div>
+        <Image
+          src="/flower.png"
+          alt="Painted flower"
+          width={70}
+          height={80}
+          className="h-auto w-[70px] object-contain"
+        />
       </motion.div>
 
     </section>
