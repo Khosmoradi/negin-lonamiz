@@ -7,11 +7,11 @@ export default function Instagram() {
 
   return (
     <section
-      className="py-16 md:py-24"
+      className="py-16 md:py-24 overflow-hidden"
       style={{ backgroundColor: "var(--color-bg-warm)" }}
     >
       {/* TODO: Connect Instagram Basic Display API or Elfsight widget */}
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 overflow-hidden">
         <AnimatedSection>
           <h2 className="mb-2 text-center font-heading text-3xl font-medium text-foreground md:text-4xl">
           Suivez-moi sur Instagram
@@ -28,7 +28,7 @@ export default function Instagram() {
         </p>
 
         <div
-          className="flex touch-pan-x gap-4 overflow-x-auto pb-4 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+          className="flex touch-pan-x gap-4 overflow-x-auto pb-4 max-w-full [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
           style={{ scrollbarWidth: "none", WebkitOverflowScrolling: "touch" } as React.CSSProperties}
         >
           {Array.from({ length: placeholderCount }).map((_, i) => (
