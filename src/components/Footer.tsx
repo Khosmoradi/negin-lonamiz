@@ -7,7 +7,7 @@ export default function Footer() {
     <footer className="border-t border-[var(--border-subtle)] py-8">
       <AnimatedSection direction="none">
       <p className="text-center text-sm text-[var(--color-text-muted)]">
-        © 2025 Tanya Lytko. Tous droits réservés.
+        © 2026 Tanya Lytko. Tous droits réservés.
       </p>
       </AnimatedSection>
     </footer>
