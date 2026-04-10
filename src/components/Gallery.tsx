@@ -9,69 +9,91 @@ import type { LightboxArtwork } from "./Lightbox";
 const artworks = [
   {
     id: 1,
-    title: "Back to Breath",
-    year: "2025",
-    technique: "Acrylique et techniques mixtes sur toile",
-    dimensions: "100 × 80 cm",
-    image: "/artworks/Back to Breath.jpg",
-    width: 1000,
-    height: 800,
-    alt: "Peinture abstraite Back to Breath par Tanya Lytko",
+    title: "Goodbye Blue Sky Series",
+    year: "2023",
+    technique: "Mixed Media on Canvas",
+    dimensions: "213 × 194 cm",
+    image: "/artworks/IMG_8801.jpg",
+    width: 800,
+    height: 730,
+    alt: "Goodbye Blue Sky Series — Negin Lonamiz",
   },
   {
     id: 2,
-    title: "Between Seasons",
-    year: "",
-    technique: "Acrylique et techniques mixtes sur papier",
-    dimensions: "42 × 30 cm",
-    image: "/artworks/Between Seasons.jpg",
-    width: 420,
-    height: 300,
-    alt: "Peinture abstraite Between Seasons par Tanya Lytko",
+    title: "Goodbye Blue Sky Series",
+    year: "2023",
+    technique: "Mixed Media on Canvas",
+    dimensions: "194 × 173 cm",
+    image: "/artworks/IMG_8802.jpg",
+    width: 800,
+    height: 713,
+    alt: "Goodbye Blue Sky Series — Negin Lonamiz",
   },
   {
     id: 3,
-    title: "REFLECTIONS",
-    year: "",
-    technique: "Acrylique et techniques mixtes sur toile",
-    dimensions: "80 × 60 cm",
-    image: "/artworks/REFLECTIONS.jpg",
+    title: "Untitled",
+    year: "2024",
+    technique: "Mixed Media on Canvas",
+    dimensions: "152 × 110 cm",
+    image: "/artworks/IMG_8798.jpg",
     width: 800,
-    height: 600,
-    alt: "Peinture abstraite REFLECTIONS par Tanya Lytko",
+    height: 579,
+    alt: "Untitled — Negin Lonamiz",
   },
   {
     id: 4,
-    title: "The Gate",
-    year: "",
-    technique: "Acrylique et techniques mixtes sur papier",
-    dimensions: "42 × 30 cm",
-    image: "/artworks/The Gate.jpg",
-    width: 420,
-    height: 300,
-    alt: "Peinture abstraite The Gate par Tanya Lytko",
+    title: "Untitled",
+    year: "2024",
+    technique: "Mixed Media on Canvas",
+    dimensions: "121 × 110 cm",
+    image: "/artworks/IMG_8799.jpg",
+    width: 800,
+    height: 727,
+    alt: "Untitled — Negin Lonamiz",
   },
   {
     id: 5,
-    title: "FEUILLES",
-    year: "",
-    technique: "Acrylique et techniques mixtes sur toile",
-    dimensions: "60 × 60 cm",
-    image: "/artworks/FEUILLES.jpg",
-    width: 600,
-    height: 600,
-    alt: "Peinture abstraite FEUILLES par Tanya Lytko",
+    title: "Wish You Were Here Series",
+    year: "2022",
+    technique: "Mixed Media on Canvas",
+    dimensions: "195 × 154 cm",
+    image: "/artworks/Hedayat One_1.jpg",
+    width: 800,
+    height: 632,
+    alt: "Wish You Were Here Series — Negin Lonamiz",
   },
   {
     id: 6,
-    title: "Whisper of Warmth",
-    year: "",
-    technique: "Acrylique et techniques mixtes sur toile",
-    dimensions: "90 × 70 cm",
-    image: "/artworks/Whisper of Warmth.jpg",
-    width: 900,
-    height: 700,
-    alt: "Peinture abstraite Whisper of Warmth par Tanya Lytko",
+    title: "Wish You Were Here Series",
+    year: "2022",
+    technique: "Mixed Media on Canvas",
+    dimensions: "180 × 150 cm",
+    image: "/artworks/IMG_2528.jpg",
+    width: 800,
+    height: 667,
+    alt: "Wish You Were Here Series — Negin Lonamiz",
+  },
+  {
+    id: 7,
+    title: "Wish You Were Here Series",
+    year: "2022",
+    technique: "Papier mâché, Wood",
+    dimensions: "30 × 17 × 12 cm",
+    image: "/artworks/IMG_8805.jpg",
+    width: 600,
+    height: 800,
+    alt: "Wish You Were Here Series — Negin Lonamiz",
+  },
+  {
+    id: 8,
+    title: "Wish You Were Here Series",
+    year: "2022",
+    technique: "Papier mâché, Wood",
+    dimensions: "26 × 24 × 5 cm",
+    image: "/artworks/IMG_8806.jpg",
+    width: 800,
+    height: 667,
+    alt: "Wish You Were Here Series — Negin Lonamiz",
   },
 ];
 
@@ -165,17 +187,17 @@ export default function Gallery() {
             </motion.article>
           </div>
 
-          {/* Row 3: two-column layout like Row 2, constrained height */}
-          <div className="flex gap-4">
+          {/* Row 3: large (65%) + small (35%) */}
+          <div className="mb-4 flex gap-4">
             <motion.article
               custom={4}
               variants={containerVariants}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, amount: 0.3 }}
-              className="w-[35%]"
+              className="w-[65%]"
             >
-              <ArtworkCard artwork={artworks[4]} sizeHint="small" constrainedHeight onClick={() => setLightboxArtwork(artworks[4])} />
+              <ArtworkCard artwork={artworks[4]} sizeHint="large" onClick={() => setLightboxArtwork(artworks[4])} />
             </motion.article>
             <motion.article
               custom={5}
@@ -183,9 +205,33 @@ export default function Gallery() {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, amount: 0.3 }}
-              className="w-[65%]"
+              className="w-[35%]"
             >
-              <ArtworkCard artwork={artworks[5]} sizeHint="large" constrainedHeight onClick={() => setLightboxArtwork(artworks[5])} />
+              <ArtworkCard artwork={artworks[5]} sizeHint="small" onClick={() => setLightboxArtwork(artworks[5])} />
+            </motion.article>
+          </div>
+
+          {/* Row 4: centered, max 40% each */}
+          <div className="flex justify-center gap-4">
+            <motion.article
+              custom={6}
+              variants={containerVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.3 }}
+              className="w-full max-w-[40%]"
+            >
+              <ArtworkCard artwork={artworks[6]} sizeHint="narrow" onClick={() => setLightboxArtwork(artworks[6])} />
+            </motion.article>
+            <motion.article
+              custom={7}
+              variants={containerVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.3 }}
+              className="w-full max-w-[40%]"
+            >
+              <ArtworkCard artwork={artworks[7]} sizeHint="narrow" onClick={() => setLightboxArtwork(artworks[7])} />
             </motion.article>
           </div>
         </div>
@@ -235,14 +281,16 @@ function ArtworkCard({
 }: {
   artwork: (typeof artworks)[0];
   priority?: boolean;
-  sizeHint?: "large" | "small";
+  sizeHint?: "large" | "small" | "narrow";
   constrainedHeight?: boolean;
   onClick?: () => void;
 }) {
   const sizes =
     sizeHint === "large"
       ? "(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 65vw"
-      : "(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 35vw";
+      : sizeHint === "narrow"
+        ? "(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 40vw"
+        : "(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 35vw";
 
   return (
     <div

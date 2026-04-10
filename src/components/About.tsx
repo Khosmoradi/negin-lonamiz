@@ -4,9 +4,13 @@ import { useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 
-const bioText = `Tanya Lytko est une artiste peintre ukrainienne contemporaine, née en 1986 dans la région d'Odessa. Depuis 2013, elle explore l'abstraction et l'expressionnisme abstrait à travers des toiles vibrantes chargées d'émotion.
-Ses œuvres se distinguent par des couleurs intenses, des lignes brisées et des compositions profondément expressives. Elles figurent dans des collections privées en Europe, aux États-Unis et en Ukraine.
-Depuis 2024, Tanya vit et travaille à Aix-les-Bains, en France, où la lumière et les paysages alpins nourrissent sa pratique artistique.`;
+const bioText = `Negin Lonamiz (née en 1995, Iran) est une peintre basée à Paris. Pour elle, la peinture est une forme d'investigation et de confrontation — une manière de regarder les choses de près et de les comprendre de l'intérieur.
+
+Son travail aborde des thèmes tels que le temps, la nature, l'émotion et la relation entre passé, présent et futur. Ces sujets ne sont pas traités comme des thèmes fixes, mais comme des expériences en évolution qui prennent forme à travers le processus de création.
+
+Son expérience vécue en Iran, marquée par l'instabilité et la tension, a profondément influencé sa perspective. Dans ce contexte, la peinture devient une forme d'endurance — un acte de regard, de maintien et de continuation.
+
+Son approche est ancrée dans l'engagement direct avec les phénomènes : observer, tester et reconstruire. Le matériau, la ligne, la forme et la sensibilité aux processus naturels jouent un rôle central dans l'élaboration de son langage visuel.`;
 
 export default function About() {
   const [imageLoaded, setImageLoaded] = useState(false);
@@ -34,8 +38,8 @@ export default function About() {
                 }}
               >
                 <Image
-                  src="/profile/tanya.jpg"
-                  alt="Tanya Lytko — Artiste peintre"
+                  src="/profile/negin.jpg"
+                  alt="Negin Lonamiz — Artiste peintre"
                   width={500}
                   height={600}
                   className={`h-auto w-full object-cover img-load ${imageLoaded ? "loaded" : ""}`}

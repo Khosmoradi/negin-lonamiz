@@ -23,20 +23,14 @@ export default function Contact() {
 
           <div className="flex flex-col gap-4 font-body">
             <a
-              href="mailto:tanyalytko@gmail.com"
-              className="inline-block text-[var(--color-accent)] underline decoration-[var(--color-accent)] underline-offset-2 transition-all hover:decoration-2"
-            >
-              tanyalytko@gmail.com
-            </a>
-            <a
-              href="https://instagram.com/tanyalytko"
+              href="https://www.instagram.com/neginlonamizstudio/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-[var(--color-accent)] underline decoration-[var(--color-accent)] underline-offset-2 transition-opacity hover:opacity-80"
             >
-              Instagram: @tanyalytko
+              Instagram: @neginlonamizstudio
             </a>
-            <p className="text-[var(--color-text-muted)]">Aix-les-Bains, France</p>
+            <p className="text-[var(--color-text-muted)]">Paris, France</p>
           </div>
 
           {/* Decorative brush-stroke SVG */}

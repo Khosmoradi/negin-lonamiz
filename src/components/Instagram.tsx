@@ -18,12 +18,12 @@ export default function Instagram() {
         </h2>
         <p className="mb-10 text-center font-body">
           <a
-            href="https://instagram.com/tanyalytko"
+            href="https://www.instagram.com/neginlonamizstudio/"
             target="_blank"
             rel="noopener noreferrer"
             className="text-[var(--color-accent)] underline decoration-[var(--color-accent)] underline-offset-2 transition-opacity hover:opacity-80"
           >
-            @tanyalytko
+            @neginlonamizstudio
           </a>
         </p>
 

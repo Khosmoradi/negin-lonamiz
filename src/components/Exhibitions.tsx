@@ -3,12 +3,15 @@
 import { motion } from "framer-motion";
 
 const exhibitions = [
-  { year: "2024", title: "Be Brave Art Show", location: "Austin, Texas, USA" },
-  { year: "2024", title: "NFT Show @Rdland", location: "USA" },
-  { year: "2023", title: "Forbidden Exhibition", location: "Ukraine" },
-  { year: "2023", title: "Ernst & Young Exhibition", location: "Stuttgart, Allemagne" },
-  { year: "2022", title: "HTX Houston", location: "USA" },
-  { year: "2022", title: "NYC Art Movement", location: "New York, USA" },
+  { year: "2025", title: "In The Path of Great Winds", location: "Silkroad Gallery, Tehran" },
+  { year: "2024", title: "Boostan", location: "Merci Café, Tehran" },
+  { year: "2023", title: "Goodbye Blue Sky", location: "Choom Gallery, Bandar-e-Anzali" },
+  { year: "2023", title: "Battle for the Future", location: "Silkroad Gallery, Tehran" },
+  { year: "2022", title: "Wish You Were Here", location: "Choom Gallery, Bandar-e-Anzali" },
+  { year: "2022", title: "L'art Brut", location: "Galerie Polysémie, Marseille" },
+  { year: "2022", title: "P.O.V", location: "El Art Gallery" },
+  { year: "2021", title: "Carbon", location: "Etemad Gallery" },
+  { year: "2021", title: "Missing Face", location: "Negar Art Gallery" },
 ];
 
 const containerVariants = {

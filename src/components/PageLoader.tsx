@@ -5,12 +5,14 @@ import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 
 const ARTWORKS = [
-  "/artworks/Back to Breath.jpg",
-  "/artworks/Between Seasons.jpg",
-  "/artworks/REFLECTIONS.jpg",
-  "/artworks/The Gate.jpg",
-  "/artworks/FEUILLES.jpg",
-  "/artworks/Whisper of Warmth.jpg",
+  "/artworks/IMG_8801.jpg",
+  "/artworks/IMG_8802.jpg",
+  "/artworks/IMG_8798.jpg",
+  "/artworks/IMG_8799.jpg",
+  "/artworks/Hedayat One_1.jpg",
+  "/artworks/IMG_2528.jpg",
+  "/artworks/IMG_8805.jpg",
+  "/artworks/IMG_8806.jpg",
 ];
 
 export default function PageLoader() {

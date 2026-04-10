@@ -15,15 +15,15 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Tanya Lytko — Artiste Peintre",
-  description: "Art abstrait contemporain — Aix-les-Bains, France",
+  title: "Negin Lonamiz — Peintre Contemporaine",
+  description: "Art abstrait contemporain — Paris, France",
   openGraph: {
-    title: "Tanya Lytko — Artiste Peintre Contemporaine",
-    description: "Art abstrait et expressionnisme abstrait — Aix-les-Bains, France",
+    title: "Negin Lonamiz — Peintre Contemporaine",
+    description: "Art abstrait contemporain — Paris, France",
     type: "website",
     locale: "fr_FR",
   },
-  metadataBase: new URL("https://tanyalytko.com"),
+  metadataBase: new URL("https://neginlonamiz.com"),
 };
 
 export const viewport: Viewport = {

@@ -37,7 +37,7 @@ export default function Navigation() {
             href="#"
             className="font-heading text-xl font-medium text-foreground tracking-tight hover:text-accent-warm transition-colors duration-[var(--transition-fast)]"
           >
-            Tanya Lytko
+            Negin Lonamiz
           </a>
 
           {/* Desktop links */}

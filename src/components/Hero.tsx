@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { motion } from "framer-motion";
 
 export default function Hero() {
@@ -21,26 +20,17 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.2, delay: 2.2, ease: "easeOut" }}
         >
-          Tanya Lytko
+          Negin Lonamiz
         </motion.h1>
 
-        {/* Flower image - relative below heading on mobile, absolute bottom on desktop */}
         <motion.div
-          className="absolute bottom-4 left-1/2 flex -translate-x-1/2 justify-center md:bottom-0"
+          className="scroll-indicator absolute bottom-8 left-1/2 flex -translate-x-1/2 flex-col items-center"
           initial={{ opacity: 0 }}
-          animate={{ opacity: 0.7, y: [0, -10, 0] }}
-          transition={{
-            opacity: { duration: 1, delay: 3.3, ease: "easeOut" },
-            y: { repeat: Infinity, duration: 3, ease: "easeInOut" },
-          }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1, delay: 3.3, ease: "easeOut" }}
         >
-          <Image
-            src="/flower.png"
-            alt="Painted flower"
-            width={70}
-            height={80}
-            className="h-auto w-[70px] object-contain"
-          />
+          <div className="h-10 w-px bg-foreground/35" />
+          <div className="-mt-px h-2 w-2 rounded-full bg-foreground/35" />
         </motion.div>
       </div>
     </section>
